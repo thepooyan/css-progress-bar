@@ -1,0 +1,23 @@
+.circleLoadBar {
+    --borderWidth: 1em;
+    --color1: red;
+    --color2: #000000;
+    --precent: 70%;
+    position: relative;
+    border-radius: 50%;
+    background: white;
+    margin: var(--borderWidth);
+    padding: 0;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: calc(-1 * var(--borderWidth));
+        bottom: calc(-1 * var(--borderWidth));
+        left: calc(-1 * var(--borderWidth));
+        right: calc(-1 * var(--borderWidth));
+        background: conic-gradient(var(--color1) var(--precent), var(--color2) var(--precent));
+        z-index: -1;
+        border-radius: 50%;
+    }
+}
